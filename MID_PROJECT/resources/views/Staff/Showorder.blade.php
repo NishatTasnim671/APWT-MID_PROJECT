@@ -1,10 +1,16 @@
 @extends('layouts.proapp')
 @section('content')
-
+<head>
+<link rel="stylesheet" type="text/css" href="/css/design1.css">
+</head>
+<div class="header1">
 
     <?php if(Session::has('staff_id')) {?>
     <h1>New Orders</h1>
-    <table class="table" border='1'>
+    </div>
+    <fieldset>
+        <legend>All Orders</legend>
+    <table class="table">
         <thead>
             <tr>
                 <th>Order Id</th>
@@ -32,6 +38,7 @@
         <tbody>
     </tbody>
     </table>
+    </fieldset>
     <?php } 
     ?>
     @endsection

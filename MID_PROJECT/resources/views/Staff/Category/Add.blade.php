@@ -1,31 +1,38 @@
 @extends('layouts.staffapp')
 @section('content')
-<h1>Add Ctegory</h1>
-<form action="{{route('insertcategory')}}" class="col-md-6" method="post">
+<head>
+<link rel="stylesheet" type="text/css" href="/css/design2.css">
+</head>
+<h1 align="center">Add Category</h1>
+<form action="{{route('insertcategory')}}"  method="post">
+<fieldset>
+               <legend>Add Category</legend>
+               <table>
         <!-- Cross Site Request Forgery-->
         {{csrf_field()}}
 
-        
-        <div class="form-group">
-            <span>Name</span>
-            <input type="text" name="name" value="{{old('name')}}" class="form-control">
+        <tr>
+       
+           <td> <span>Name</span></td>
+           <td>   <input type="text" name="name" value="{{old('name')}}" ></td>
             @error('name')
-                <span class="text-danger">{{$message}}</span>
+            <td>   <span >{{$message}}</span></td>
             @enderror
-            </div>
-            <div class="form-group">
-            <span>Description</span>
-            <input type="text" name="desc" value="{{old('desc')}}" class="form-control">
+</tr>
+           <tr>
+           <td> <span>Description</span></td>
+           <td> <input type="text" name="desc" value="{{old('desc')}}" ></td>
             @error('desc')
-                <span class="text-danger">{{$message}}</span>
+            <td>  <span>{{$message}}</span></td>
             @enderror
-            </div>
+           </tr>
 
             
-        <div class="form-group">
+<tr>
         
-        <input type="submit" class="btn btn-success" value="Add Category" ></li>
-        </div>
+      <td>  <input type="submit"  value="Add Category" ></td>
+</table>
+</fieldset>
     </form>
 
     @endsection

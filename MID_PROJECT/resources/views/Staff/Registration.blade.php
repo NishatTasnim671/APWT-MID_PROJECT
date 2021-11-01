@@ -1,68 +1,78 @@
 @extends('layouts.app')
 @section('content')
-    <form action="{{route('RegistrationSubmit')}}" class="col-md-6" method="post">
+<head>
+<link rel="stylesheet" type="text/css" href="/css/design2.css">
+</head>
+    <form action="{{route('RegistrationSubmit')}}" method="post">
+        <fieldset>
+            <legend>Registration form</legend>
         <!-- Cross Site Request Forgery-->
         {{csrf_field()}}
-
-        
-        <div class="form-group">
-            <span>Name</span>
-            <input type="text" name="name" value="{{old('name')}}" class="form-control">
+<table>
+    <tr>
+           <td> <span>Name</span></td>
+          <td>  <input type="text" name="name" value="{{old('name')}}" ></td>
             @error('name')
-                <span class="text-danger">{{$message}}</span>
+               <td> <span>{{$message}}</span></td>
             @enderror
-            </div>
-            <div class="form-group">
-            <span>Phone</span>
-            <input type="phone" name="phone" value="{{old('phone')}}" class="form-control">
+</tr>
+<tr>
+           <td> <span>Phone</span></td>
+         <td>   <input type="text" name="phone" value="{{old('phone')}}" ></td>
             @error('phone')
-                <span class="text-danger">{{$message}}</span>
+                <td><span>{{$message}}</span></td>
             @enderror
-            </div>
+</tr>
+<tr>          
 
-            <div class="form-group">
-            <span>Address</span>
-            <input type="address" name="address" value="{{old('address')}}" class="form-control">
+            
+           <td><span> Address</span></td>
+<td> <input type="text" name="address" value="{{old('address')}}" ></td>
             
             @error('address')
-                <span class="text-danger">{{$message}}</span>
+                <td><span >{{$message}}</span></td>
             @enderror
-            </div>
-
-            <div class="form-group">
-            <span>Username</span>
-            <input type="text" name="username" value="{{old('username')}}" class="form-control">
+</tr>   
+<tr>
+          
+<td> <span>Username</span></td>
+            <td><input type="text" name="username" value="{{old('username')}}" ></td>
             @error('username')
-                <span class="text-danger">{{$message}}</span>
+            <td><span >{{$message}}</span></td>
             @enderror
-            </div>
+</tr>
+  <tr >        
 
-            <div class="form-group">
-            <span>Email</span>
-            <input type="text" name="email" value="{{old('email')}}" class="form-control">
+          
+          <td>  <span>Email</span></td>
+          <td>  <input type="text" name="email" value="{{old('email')}}" ></td>
             @error('email')
-                <span class="text-danger">{{$message}}</span>
+              <td>  <span >{{$message}}</span><td>
             @enderror
-            </div>
+</tr>
+           
 
 
             
 
 
-            <div class="form-group">
-            <span>Password</span>
-            <input type="password" name="password" value="{{old('password')}}" class="form-control">
+        <tr>  
+        <td> <span>Password</span></td>
+        <td>  <input type="password" name="password" value="{{old('password')}}" ></td>
             @error('password')
-                <span class="text-danger">{{$message}}</span>
+            <td>    <span class="text-danger">{{$message}}</span></td>
             @enderror
-            </div>
-            <input type="hidden" name="profileimg" value="default.png" class="form-control">
+</tr>   
+            <input type="hidden" name="profileimg" value="default.png" >
            
 
-        <div class="form-group">
-        
-        <input type="submit" class="btn btn-success" value="Registration" ></li>
-        </div>
+   
+       <tr> 
+       <td> <input type="submit" value="Registration" ></td>
+</tr>
+</table>
+    </fieldset>
+     
     </form>
 
     @endsection

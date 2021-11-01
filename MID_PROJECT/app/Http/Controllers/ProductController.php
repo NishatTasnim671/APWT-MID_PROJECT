@@ -28,7 +28,7 @@ class ProductController extends Controller
         $this->validate(
             $request,
             [
-                'p_id'=>'required|min:1',
+                'p_id'=>'required',
                 'p_name'=>'required|min:5|max:30',
                 'p_price'=>'required|min:2|max:10',
                 'p_categories'=>'required',
@@ -41,9 +41,18 @@ class ProductController extends Controller
 
             ],
             [
-                'p_id.required'=>'Please Enter Your Name',
-                'p_name.required'=>'Please Enter Your Name',
-                'p_name.min'=>'Name must be greater than 2 charcters'
+                'p_id.required'=>'Please Enter Product id',
+                'p_name.required'=>'Please Enter Product Name',
+                'p_name.min'=>'Product name must be greater than 5 charcters',
+                'p_name.max'=>'Product name must be smaller than 30 charcters',
+                'p_price.required'=>'Please Enter Product price',
+                'p_price.min'=>'Product price must be greater than 2 charcters',
+                'p_price.max'=>'Product price must be smaller than 10 charcters',
+                'p_categories.required'=>'Please Enter the category',
+                'p_quantity.required'=>'Please Enter Product quantity',
+                'p_details.required'=>'Please Enter Product detail',
+                'p_details.min'=>'Product details must be greater than 10 charcters',
+                'p_details.max'=>'Product details must be smaller than 30 charcters'
                
                 
 
@@ -106,10 +115,10 @@ class ProductController extends Controller
         $this->validate(
             $request,
             [
-                'p_id'=>'required|min:1',
+                
+                'p_id'=>'required',
                 'p_name'=>'required|min:5|max:30',
                 'p_price'=>'required|min:2|max:10',
-                
                 'p_quantity'=>'required|min:1',
                 'p_details'=>'required|min:10|max:30'
                 
@@ -118,9 +127,17 @@ class ProductController extends Controller
             ],
             [
                 
-                'p_id.required'=>'Please Enter Your Name',
-                'p_name.required'=>'Please Enter Your Name',
-                'p_name.min'=>'Name must be greater than 2 charcters'
+                'p_id.required'=>'Please Enter Product id',
+                'p_name.required'=>'Please Enter Product Name',
+                'p_name.min'=>'Product name must be greater than 5 charcters',
+                'p_name.max'=>'Product name must be smaller than 30 charcters',
+                'p_price.required'=>'Please Enter Product price',
+                'p_price.min'=>'Product price must be greater than 2 charcters',
+                'p_price.max'=>'Product price must be smaller than 10 charcters',
+                'p_quantity.required'=>'Please Enter Product quantity',
+                'p_details.required'=>'Please Enter Product detail',
+                'p_details.min'=>'Product details must be greater than 10 charcters',
+                'p_details.max'=>'Product details must be smaller than 30 charcters'
                
             ]
         );
@@ -169,6 +186,7 @@ class ProductController extends Controller
         $var->P_price= $request->p_price;
         $var->P_quantity= $request->p_quantity;
         $var->P_details= $request->p_details;
+       
        
        
      

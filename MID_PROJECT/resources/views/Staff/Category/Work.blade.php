@@ -1,11 +1,17 @@
 @extends('layouts.staffapp')
 @section('content')
-
+<head>
+<link rel="stylesheet" type="text/css" href="/css/design1.css">
+</head>
+<div class="header1">
 
     <?php if(Session::has('staff_id')) {?>
     <h1>Category page</h1>
-    <h3><a  class="btn btn-info" href="/Staff/addcategories/">Add Category</a></h3>
-    <table class="table" border='1'>
+    </div>
+    <div class="button"><a  class="btn btn-info" href="/Staff/addcategories/">Add Category</a></div>
+    <fieldset>
+        <legend>All Category</legend>
+    <table class="table" align="center" border='1'>
         <thead>
             <tr>
                 <th>Id</th>
@@ -28,6 +34,7 @@
         <tbody>
     </tbody>
     </table>
+    </fieldset>
 
     
         

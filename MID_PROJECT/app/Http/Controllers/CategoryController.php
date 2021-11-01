@@ -24,7 +24,7 @@ class CategoryController extends Controller
         $this->validate(
             $request,
             [
-                'name'=>'required|min:3|max:30',
+                'name'=>'required|min:3|max:20',
                 'desc'=>'required|min:10'
                 
                 
@@ -33,8 +33,9 @@ class CategoryController extends Controller
             ],
             [
                
-                'name.required'=>'Please Enter Your Name',
-                'name.min'=>'Name must be greater than 2 charcters',
+                'name.required'=>'Please Enter Category Name',
+                'name.min'=>'Name must be greater than 3 charcters',
+                'name.max'=>'Name must be smaller than 20 charcters',
                 'desc.required'=>'Description  Needed',
                 'desc.min'=>'Description must be greater than 10 characters'
                 
@@ -68,7 +69,7 @@ class CategoryController extends Controller
         $this->validate(
             $request,
             [
-                'name'=>'required|min:3|max:30',
+                'name'=>'required|min:3|max:20',
                 'desc'=>'required|min:10'
                 
 
@@ -76,8 +77,9 @@ class CategoryController extends Controller
             ],
             [
                 
-                'name.required'=>'Please Enter Your Name',
-                'name.min'=>'Name must be greater than 2 charcters',
+                'name.required'=>'Please Enter Category Name',
+                'name.min'=>'Name must be greater than 3 charcters',
+                'name.max'=>'Name must be smaller than 20 charcters',
                 'desc.required'=>'Description  Needed',
                 'desc.min'=>'Description must be greater than 10 characters'
             ]

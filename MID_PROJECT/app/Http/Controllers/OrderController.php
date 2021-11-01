@@ -12,7 +12,7 @@ class OrderController extends Controller
     //
     public function order()
     {
-        $Myorder=Myorder::where('O_status','0')->get();
+        $Myorder=Myorder::all();
         return view('Staff.Showorder')->with('Myorder', $Myorder);
     }
     

@@ -1,32 +1,37 @@
 @extends('layouts.staffapp')
 @section('content')
-<h1>Add product</h1>
-<form action="{{route('insertproduct')}}" class="col-md-6" method="post"  enctype="multipart/form-data">
+<head>
+<link rel="stylesheet" type="text/css" href="/css/design2.css">
+</head>
+<h1 align="center">Add product</h1>
+<form action="{{route('insertproduct')}}"  method="post"  enctype="multipart/form-data">
         <!-- Cross Site Request Forgery-->
+        <fieldset>
+               <legend>Add Product</legend>
+               <table>
         {{csrf_field()}}
-        <div class="form-group">
             <span>Product Id</span>
-            <input type="text" name="p_id" value="{{old('p_id')}}" class="form-control">
+            <input type="text" name="p_id" value="{{old('p_id')}}" >
             @error('p_id')
-                <span class="text-danger">{{$message}}</span>
+                <span >{{$message}}</span>
             @enderror
         
-        <div class="form-group">
+        
             <span>Name</span>
-            <input type="text" name="p_name" value="{{old('p_name')}}" class="form-control">
+            <input type="text" name="p_name" value="{{old('p_name')}}" >
             @error('p_name')
-                <span class="text-danger">{{$message}}</span>
+                <span >{{$message}}</span>
             @enderror
             </div>
-            <div class="form-group">
+            <div>
             <span>Price</span>
-            <input type="text" name="p_price" value="{{old('p_price')}}" class="form-control">
+            <input type="text" name="p_price" value="{{old('p_price')}}">
             @error('p_price')
-                <span class="text-danger">{{$message}}</span>
+                <span ">{{$message}}</span>
             @enderror
             </div>
 
-            <div class="form-group">
+            <div >
             <span>Category</span>
             <select name="p_categories">
                 <option value="">Select a Category</option>
@@ -35,36 +40,36 @@
                 @endforeach
 </select>
 @error('p_categories')
-                <span class="text-danger">{{$message}}</span>
+                <span >{{$message}}</span>
             @enderror
             </div>
             
 
-            <div class="form-group">
+            
             <span>Quantity</span>
-            <input type="text" name="p_quantity" value="{{old('p_quantity')}}" class="form-control">
+            <input type="text" name="p_quantity" value="{{old('p_quantity')}}" >
             @error('p_quantity')
-                <span class="text-danger">{{$message}}</span>
+                <span >{{$message}}</span>
             @enderror
-            </div>
+            
 
-            <div class="form-group">
+           
             <span>Details</span>
-            <input type="text" name="p_details" value="{{old('p_details')}}" class="form-control">
+            <input type="text" name="p_details" value="{{old('p_details')}}" >
             @error('p_details')
-                <span class="text-danger">{{$message}}</span>
+                <span >{{$message}}</span>
             @enderror
-            </div>
+           
             <span>Image 1</span>
-            <input type="file" name="P_img1" class="form-control"> 
+            <input type="file" name="P_img1" > 
             <span>Image 2</span>
-            <input type="file" name="P_img2" class="form-control"> 
+            <input type="file" name="P_img2" > 
             <span>Image 3</span>
-            <input type="file" name="P_img3" class="form-control"> 
-        <div class="form-group">
+            <input type="file" name="P_img3" > 
         
-        <input type="submit" class="btn btn-success" value="Add Product" ></li>
-        </div>
+        
+        <input type="submit"  value="Add Product" ></li>
+        
     </form>
 
     @endsection

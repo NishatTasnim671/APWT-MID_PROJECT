@@ -1,36 +1,45 @@
 @extends('layouts.app')
 @section('content')
+<head>
+<link rel="stylesheet" type="text/css" href="/css/design2.css">
+</head>
     <form action="{{route('loginsubmit')}}" class="col-md-6" method="post">
         <!-- Cross Site Request Forgery-->
         {{csrf_field()}}
 <!--  class="col-md-4 form-group" -->
-            <div class="form-group">
-            <span>Username</span>
-            <input type="text" name="username" value="{{old('username')}}" class="form-control">
+           <fieldset>
+               <legend>Log In</legend>
+               <table>
+<tr>
+           <td> <span>Username</span></td>
+           <td> <input type="text" name="username" value="{{old('username')}}" ></td>
             @error('username')
-                <span class="text-danger">{{$message}}</span>
+            <td>   <span class="text-danger">{{$message}}</span></td>
             @enderror
-            </div>
+</tr>
 
-            <div class="form-group">
-            <span>Password</span>
-            <input type="password" name="password" value="{{old('password')}}" class="form-control">
+           <tr>
+            <td><span>Password</span></td>
+            <td> <input type="password" name="password" value="{{old('password')}}" ></td>
             @error('password')
-                <span class="text-danger">{{$message}}</span>
+            <td>   <span class="text-danger">{{$message}}</span></td>
             @enderror
-            </div>  
-
-            @isset($message)
+</tr>
+      
+ @isset($message)
           <div class="alert alert-success">
           <strong>{{@message}}</strong>
           </div>
             @endif
             
 
-            <div class="form-group">    
-                <span> </span>
-             <input type="submit" class="btn btn-success" value="Sign In">
-            </div>
+             
+               
+         <tr>
+         <td>    <input type="submit" class="btn btn-success" value="Sign In"></td>
+</tr>
+</table>
+</fieldset>
     </form>
 
     @endsection

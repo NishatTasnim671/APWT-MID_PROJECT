@@ -1,34 +1,34 @@
 @extends('layouts.staffapp')
 @section('content')
-<form action="{{route('editCat')}}" class="col-md-6" method="post">
+<head>
+<link rel="stylesheet" type="text/css" href="/css/design2.css">
+</head>
+<form action="{{route('editCat')}}" method="post">
+<fieldset>
+               <legend>Edit Category</legend>
+               <table>
         <!-- Cross Site Request Forgery-->
         {{csrf_field()}}
 
         <input type="hidden" name="id" value="{{$cate->id}}">
-        <div class="form-group">
-            <span>Name</span>
-            <input type="text" name="name" value="{{$cate->name}}" class="form-control">
+        <tr>
+<td>  <span>Name</span></td>
+<td>    <input type="text" name="name" value="{{$cate->name}}" ></td>
             @error('name')
-                <span class="text-danger">{{$message}}</span>
+            <td> <span class="text-danger">{{$message}}</span></td>
             @enderror
-            </div>
-
-            <div class="form-group">
-            <span>Description</span>
-            <input type="text" name="desc" value="{{$cate->desc}}" class="form-control">
+</tr>
+<tr>
+<td> <span>Description</span></td>
+<td> <input type="text" name="desc" value="{{$cate->desc}}" ></td>
             @error('desc')
-                <span class="text-danger">{{$message}}</span>
+            <td>  <span class="text-danger">{{$message}}</span></td>
             @enderror
-            </div>
-
-            
-            
-
-
-        <div class="form-group">
-        
-        <input type="submit" class="btn btn-success" value="Edit" ></li>
-        </div>
+</tr>
+        <tr>
+        <td> <input type="submit" class="btn btn-success" value="Edit" ></td>
+</table>
+</fieldset>
     </form>
 
     @endsection

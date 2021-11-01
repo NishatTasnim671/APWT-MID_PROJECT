@@ -1,10 +1,16 @@
 @extends('layouts.proapp')
 @section('content')
-
+<head>
+<link rel="stylesheet" type="text/css" href="/css/design1.css">
+</head>
+<div class="header1">
 
     <?php if(Session::has('staff_id')) {?>
     <h1>Product page</h1>
-    <h3><a  class="btn btn-info" href="/Staff/addproducts/">Add Product</a></h3>
+    </div>
+    <div class="button"><a  class="btn btn-info" href="/Staff/addproducts/">Add Product</a></div>
+    <fieldset>
+        <legend>All Products</legend>
     <table class="table" border='1'>
         <thead>
             <tr>
@@ -29,13 +35,13 @@
             <td>{{$product->P_quantity}}</td>
             <td>{{$product->P_details}}</td>
             <td>
-                <img src="{{'assests/uploads/product/image1/'.$product->P_img1}}">
+                <img src="{{asset('assets/uploads/product/image1/'.$product->P_img1)}}">
             </td>
             <td>
-                <img src="{{'assests/uploads/product/image2/'.$product->P_img2}}">
+                <img src="{{asset('assets/uploads/product/image2/'.$product->P_img2)}}">
             </td>
             <td>
-                <img src="{{'assests/uploads/product/image3/'.$product->P_img3}}">
+                <img src="{{asset('assets/uploads/product/image3/'.$product->P_img3)}}">
             </td>
             
             <td>
@@ -48,6 +54,7 @@
         <tbody>
     </tbody>
     </table>
+    </fieldset>
 
     
         
